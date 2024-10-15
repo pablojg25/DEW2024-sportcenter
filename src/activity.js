@@ -13,6 +13,18 @@ class Activity extends Service {
   calculateCost () {
     return this.fixedCost + this.variableCost * this.assistance
   }
+
+  ledBy (instructor) {
+    instructor.lead(this)
+  }
+
+  get instructor () {
+    return this.#instructor
+  }
+
+  set instructor (instructor) {
+    this.#instructor = instructor
+  }
 }
 
 module.exports = Activity
